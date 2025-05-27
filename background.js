@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 async function getAnswerFromGemini(question) {
     try {
         console.log('Sending request to Gemini API:', question);
-        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDTGoZMIHc3hqdRWe-_0jteh7aixJNK0y8', {
+        const response = await fetch('', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
