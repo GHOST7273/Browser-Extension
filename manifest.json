@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "LMS Question Helper",
+  "version": "1.0",
+  "description": "Get instant answers to LMS questions using AI - Just select text to get answers!",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 

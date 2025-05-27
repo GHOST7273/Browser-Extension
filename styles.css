@@ -1,0 +1,109 @@
+#lms-answer-popup {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 90vw;
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px 8px 0 0;
+}
+
+.popup-header span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    padding: 0 5px;
+    min-width: 30px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.close-btn:hover {
+    color: #000;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.popup-content {
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.loading {
+    color: #666;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.answer {
+    line-height: 1.5;
+    color: #333;
+    font-size: 14px;
+}
+
+.error {
+    color: #dc3545;
+    font-style: italic;
+    padding: 10px;
+    background: #fff5f5;
+    border-radius: 4px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    #lms-answer-popup {
+        width: 90vw;
+        max-width: 300px;
+    }
+    
+    .popup-content {
+        max-height: 200px;
+    }
+    
+    .answer {
+        font-size: 13px;
+    }
+} 
