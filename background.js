@@ -1,3 +1,6 @@
+import GEMINI_API_KEY from './.env'
+dotenv.config() 
+
 // Establish connection with content script
 chrome.runtime.onConnect.addListener(function(port) {
     console.log('Background script connected');
@@ -24,7 +27,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 async function getAnswerFromGemini(question) {
     try {
         console.log('Sending request to Gemini API:', question);
-        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDTGoZMIHc3hqdRWe-_0jteh7aixJNK0y8', {
+        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='+GEMINI_API_KEY, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
